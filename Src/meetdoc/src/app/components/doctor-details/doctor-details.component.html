@@ -1,0 +1,144 @@
+<div class="info">
+  <div class="profile_image">
+    <img src="assets/doctor_profile/profile2.png" alt="profile image" />
+  </div>
+  <div class="doc_description mt-3">
+    <p class="doc_title">{{title}} {{name}}</p>
+    <p class="specialization">Specialized in {{specialize}}</p>
+    <p class="Ex">{{years}} Yrs Experience</p>
+    <div>
+      <mat-icon> map</mat-icon
+      ><span class="Loc">{{address}}</span>
+    </div>
+    <p class="sessions">{{nomOfSessions}} Sessions</p>
+  </div>
+
+  <div class="actions">
+    <div>
+      <div class="d-flex align-items-center">
+        <div class="mx-3">
+          <button class="edit">
+            <mat-icon class="mat-icon">edit</mat-icon>
+          </button>
+          <span>Edit Clinic</span>
+        </div>
+        <div class="status ml-3">
+          <mat-slide-toggle class="mat-icon mx-3"></mat-slide-toggle>
+        </div>
+        <div class="active-inactive">Active</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="experienceHeader != ''">
+  <div class="card-title">Experience</div>
+<div class="card mt-1">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle="true" #experiencePanel>
+      <mat-expansion-panel-header
+        [collapsedHeight]="'120px'"
+        [expandedHeight]="'120px'"
+      >
+        <mat-panel-title class="desc">
+          <div class="ex-card-clinic">{{experienceHeader.clinic}}</div>
+          <div class="ex-card-details">{{experienceHeader.details}}</div>
+          <div class="ex-card-years">{{experienceHeader.from}}-{{experienceHeader.to}}</div>
+        </mat-panel-title>
+        <mat-panel-description>
+          <button class="bts" *ngIf="!experiencePanel.expanded">
+            <mat-icon class="add-minus">add</mat-icon>
+          </button>
+          <button class="bts" *ngIf="experiencePanel.expanded">
+            <mat-icon class="add-minus">remove</mat-icon>
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let ex of experience">
+        <mat-card *ngIf="!(ex['details'] === '')" class="desc">
+          <div class="ex-card-clinic my-1">{{ex['clinic']}}</div>
+          <div class="ex-card-details my-1">{{ex['details']}}</div>
+          <div class="ex-card-years my-1">{{ex['from']}}-{{ex['to']}}</div>
+        </mat-card>
+      </div> 
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+</div>
+
+<div *ngIf="certificateHEader != ''">
+  <div class="card-title">Certificates</div>
+<div class="card mt-1">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle="true" #certificatePanel>
+      <mat-expansion-panel-header
+        [collapsedHeight]="'120px'"
+        [expandedHeight]="'120px'"
+      >
+        <mat-panel-title class="desc">
+          <div class="ce-card-details my-1">
+            {{certificateHEader.details}}
+          </div>
+          <div class="ce-card-years my-1">{{certificateHEader.from}}-{{certificateHEader.to}}</div>
+        </mat-panel-title>
+        <mat-panel-description>
+          <button class="bts" *ngIf="!certificatePanel.expanded">
+            <mat-icon class="add-minus">add</mat-icon>
+          </button>
+          <button class="bts" *ngIf="certificatePanel.expanded">
+            <mat-icon class="add-minus">remove</mat-icon>
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let cer of certificates">
+        <mat-card *ngIf="!(cer['details'] === '')" class="desc">
+          <div class="ce-card-details my-2">
+            {{cer['details']}}
+          </div>
+          <div class="ce-card-years my-2">{{cer['from']}}-{{cer['to']}}</div>
+        </mat-card>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+</div>
+
+
+<div *ngIf="educationHeader != ''">
+  <div class="card-title">Education</div>
+<div class="card mt-1 mb-4">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle="true" #educationPanel>
+      <mat-expansion-panel-header
+        [collapsedHeight]="'120px'"
+        [expandedHeight]="'120px'"
+      >
+        <mat-panel-title class="desc">
+          <div class="ce-card-details my-1">
+            {{educationHeader.details}}
+          </div>
+          <div class="ce-card-years my-1">{{educationHeader.from}}-{{educationHeader.to}}</div>
+        </mat-panel-title>
+        <mat-panel-description>
+          <button class="bts" *ngIf="!educationPanel.expanded">
+            <mat-icon class="add-minus">add</mat-icon>
+          </button>
+          <button class="bts" *ngIf="educationPanel.expanded">
+            <mat-icon class="add-minus">remove</mat-icon>
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let edu of education">
+        <mat-card *ngIf="!(edu['details'] === '')" class="desc">
+          <div class="ce-card-details my-2">
+            {{edu['details']}}
+          </div>
+          <div class="ce-card-years my-2">{{edu['from']}}-{{edu['to']}}</div>
+        </mat-card>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+</div>

@@ -1,0 +1,123 @@
+<mat-sidenav-container class="h-100">
+  <mat-sidenav #sidenav mode="side" class="mat-elevation-z3">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <section id="logo" class="m-4">
+        <img alt="logo" src="assets/login_assets/company_logo.png" class="img-fluid"/>
+      </section>
+      <section id="sidenav-buttons" class="w-100 p-2">
+        <button routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+                routerLinkActive="nav-button-active mat-elevation-z3"
+                mat-button mat-raised-button
+                class="w-100 mb-3 nav-buttons mat-elevation-z0">
+          <mat-icon>home</mat-icon>
+          Dashboard
+        </button>
+        <ng-container *ngIf="activeLink === '/clinic-profile/reviews'; else schedule">
+          <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/clinic-profile/reviews"
+                  [routerLinkActiveOptions]="{ exact: false }"
+                  routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                  class="w-100 mb-3 nav-buttons mat-elevation-z0">
+            <mat-icon>location_city</mat-icon>
+            Clinic Profile
+          </button>
+        </ng-container>
+        <ng-template #schedule>
+          <ng-container *ngIf="activeLink === '/clinic-profile/schedule'; else details">
+            <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/clinic-profile/schedule"
+                    [routerLinkActiveOptions]="{ exact: false }"
+                    routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                    class="w-100 mb-3 nav-buttons mat-elevation-z0">
+              <mat-icon>location_city</mat-icon>
+              Clinic Profile
+            </button>
+          </ng-container>
+        </ng-template>
+
+        <ng-template #details>
+          <ng-container>
+            <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/clinic-profile/details"
+                    [routerLinkActiveOptions]="{ exact: false }"
+                    routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                    class="w-100 mb-3 nav-buttons mat-elevation-z0">
+              <mat-icon>location_city</mat-icon>
+              Clinic Profile
+            </button>
+          </ng-container>
+        </ng-template>
+        <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/patients"
+                [routerLinkActiveOptions]="{ exact: false }"
+                routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                class="w-100 mb-3 nav-buttons mat-elevation-z0">
+          <mat-icon>accessible</mat-icon>
+          Patients
+        </button>
+        <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/appointments"
+                [routerLinkActiveOptions]="{ exact: false }"
+                routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                class="w-100 mb-3 nav-buttons mat-elevation-z0">
+          <mat-icon>calendar_today</mat-icon>
+          Appointments
+        </button>
+        <button *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin'" routerLink="/departments"
+                [routerLinkActiveOptions]="{ exact: false }"
+                routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                class="w-100 mb-3 nav-buttons mat-elevation-z0">
+          <mat-icon>domain</mat-icon>
+          Departments
+        </button>
+        <button routerLink="/reports" [routerLinkActiveOptions]="{ exact: false }"
+                *ngIf="userRole=='SuperAdmin' || userRole== 'ClinicAdmin' || userRole=='Doctor'"
+                routerLinkActive="nav-button-active mat-elevation-z3" mat-button mat-raised-button
+                class="w-100 mb-3 nav-buttons mat-elevation-z0">
+          <mat-icon> insert_drive_file</mat-icon>
+          Reports
+        </button>
+      </section>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div *ngIf="isLoggedIn" class="row">
+      <mat-toolbar class="mat-elevation-z4">
+        <button (click)="sidenav.toggle()" mat-icon-button class="example-icon btn-icon"
+                aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+
+        <div class="searchBar">
+          <mat-icon class="search-icon text-muted">search</mat-icon>
+          <input id="searchQueryInput" type="search" name="searchQueryInput" placeholder="Search..."/>
+        </div>
+
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon btn-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>chat_bubble_outline</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon btn-icon"
+                aria-label="Example icon-button with heart icon">
+          <mat-icon>notifications_none</mat-icon>
+        </button>
+        <section class="d-flex flex-row">
+          <div *ngIf="this.profilePicture==='';else other_content">
+            <span
+              class="d-inline-block img-fluid rounded-circle text-center text-capitalize mt-auto profile-picture-placeholder">{{this.username[0]}}</span>
+          </div>
+          <ng-template #other_content>
+            <img alt="profile-image" src="assets/login_assets/Group%201930.png"
+                 class="img-fluid rounded-circle">
+          </ng-template>
+
+          <button mat-button [matMenuTriggerFor]="menu"> {{ this.username }}
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onLogoutCLicked()">Logout</button>
+          </mat-menu>
+        </section>
+      </mat-toolbar>
+    </div>
+    <div class="row  w-100 p-3">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

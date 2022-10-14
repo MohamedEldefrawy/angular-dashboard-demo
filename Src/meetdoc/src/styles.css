@@ -1,0 +1,24 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*!* You can add global styles to this file, and also import other style files *!*/
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.gray {
+  color: #A1A1A1;
+}
+
+.green {
+  color: #7CBD42;
+}
+
+.mat-form-field-underline,
+.mat-form-field-ripple {
+  display: none;
+}

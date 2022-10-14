@@ -1,0 +1,43 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/Src/meetdoc/dist
+/Src/meetdoc/tmp
+/Src/meetdoc/out-tsc
+/Src/meetdoc/bazel-out
+
+# Node
+/Src/meetdoc/node_modules
+/Src/meetdoc/npm-debug.log
+/Src/meetdoc/yarn-error.log
+
+# IDEs and editors
+/Src/meetdoc/.idea/
+/Src/meetdoc/.project
+/Src/meetdoc/.classpath
+/Src/meetdoc/.c9/
+/Src/meetdoc/*.launch
+/Src/meetdoc/.settings/
+/Src/meetdoc/*.sublime-workspace
+
+# Visual Studio Code
+/Src/meetdoc/.vscode/*
+/Src/meetdoc/!.vscode/settings.json
+/Src/meetdoc/!.vscode/tasks.json
+/Src/meetdoc/!.vscode/launch.json
+/Src/meetdoc/!.vscode/extensions.json
+/Src/meetdoc/.history/*
+
+# Miscellaneous
+/Src/meetdoc/.angular/cache
+/Src/meetdoc/.sass-cache/
+/Src/meetdoc/connect.lock
+/Src/meetdoc/coverage
+/Src/meetdoc/libpeerconnection.log
+/Src/meetdoc/testem.log
+/Src/meetdoc/typings
+
+# System files
+/Src/meetdoc/.DS_Store
+/Src/meetdoc/Thumbs.db
+/.angular/

@@ -1,0 +1,47 @@
+<div style="padding-left: 12px;padding-right: 12px">
+  <div class="row justify-content-center align-items-baseline">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <header>
+        <h5 class="page-title">Clinics</h5>
+      </header>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" routerLinkActive="active"><a class="breadcrumb-link" routerLink="/">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item" routerLinkActive="active"><a class="breadcrumb-link" routerLink="/clinic-profile">Clinics</a>
+          </li>
+          <ng-container *ngIf="activeLink === '/clinic-profile/details'; else schedule">
+            <li class="breadcrumb-item text-muted" aria-current="page">Dr Details</li>
+          </ng-container>
+          <ng-template #schedule>
+            <ng-container *ngIf="activeLink === '/clinic-profile/schedule'; else reviews">
+              <li class="breadcrumb-item text-muted" aria-current="page">Schedule</li>
+            </ng-container>
+          </ng-template>
+          <ng-template #reviews>
+            <ng-container *ngIf="activeLink === '/clinic-profile/reviews'; else none">
+              <li class="breadcrumb-item text-muted" aria-current="page">Reviews</li>
+            </ng-container>
+          </ng-template>
+          <ng-template #none>
+          </ng-template>
+          <ng-template #else1>else</ng-template>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
+      <button mat-button mat-raised-button class="w-25">
+        + Add Doctors
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <nav mat-tab-nav-bar class="mat-elevation-z3">
+      <a mat-tab-link routerLink="{{link.uri}}" routerLinkActive="tab-active"
+         *ngFor="let link of links"> {{link.name}} </a>
+    </nav>
+    <mat-tab-nav-panel>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </div>
+</div>

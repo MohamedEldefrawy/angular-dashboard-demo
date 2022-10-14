@@ -1,0 +1,49 @@
+.icon-schedule-options {
+  font-size: 1.5em;
+  margin-right: 0.25em;
+}
+
+.service-options .mat-form-field {
+  width: 90%;
+}
+
+
+::ng-deep .service-options .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 30px;
+  background: white;
+  border: 1px solid #DCDCDC;
+}
+
+.session-text {
+  color: #6B2D80;
+  font-size: 16px;
+}
+
+.day {
+  width: 7em;
+  height: 5.5em;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: white;
+  background: #7CBD42;
+  margin: 1em;
+}
+
+.day.off {
+  color: #707070;
+  background: white;
+}
+
+.time-box {
+  width: 5.5rem;
+  height: 2rem;
+  border: 1px solid #DCDCDC;
+  border-radius: 0.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-container {
+  padding: 3rem;
+}

@@ -1,0 +1,52 @@
+<div class=container>
+  <div class="card">
+    <div class="login-logo">
+      <img id="company_logo" src="assets/login_assets/company_logo.png" alt="company_logo">
+    </div>
+    <div style="padding-top:30px;width:350px">
+      <form [formGroup]="myForm" #localForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+          <!--    Username field    -->
+          <div class="flex-column handle-input-field">
+            <label class="gray">Username*</label>
+            <mat-form-field class="inputField-full-width" appearance="outline" color="primary">
+              <mat-icon matPrefix class="green">person_outline</mat-icon>
+              <input class="gray" matInput aria-required="false" name="username" formControlName="username">
+            </mat-form-field>
+
+
+            <!--    Password field    -->
+            <div class="flex-column handle-input-field">
+              <label class="gray">password</label>
+              <mat-form-field class="inputField-full-width" appearance="outline" color="primary">
+                <mat-icon matPrefix class="green">lock</mat-icon>
+                <input class="gray" type="password" matInput aria-required="false" name="password"
+                       formControlName="password">
+              </mat-form-field>
+            </div>
+            <!-- remember me and forget password -->
+            <!--   remember me   -->
+            <div class="flex-row">
+              <div style="padding-bottom: 20px">
+                <label class="login-rememberMe-label" for="rememberme">
+                  <input type="checkbox" class="login-rememberMe-input" name="checkbocname" id="rememberme" formControlName="rememberme">
+                  <div class="login-rememberMe-dimensions"></div>
+                  Remember me
+                </label>
+              </div>
+              <!--    forget password   -->
+              <div>
+                <a (click)="onForgetPassword()" class="login-forgetPassword">Forgot Password?</a>
+              </div>
+            </div>
+            <button mat-button class="btn-meetdoc-sccuess-login" type="submit" [disabled]="myForm.invalid">login
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  <p class="meetdoc-copyright">&copy; 2022 Meetdoc, All Rights Reserved . Designed & Developed by Xlab Group</p>
+</div>

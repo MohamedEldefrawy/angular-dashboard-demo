@@ -1,0 +1,139 @@
+::ng-deep.x .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 30px;
+  border:1px solid #DCDCDC;
+  background-color: white;
+  width: 300px;
+}
+
+.select {
+  width: 70%;
+  border-radius: 20px;
+  color: #707070;
+}
+
+.patient-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 17px;
+  justify-content: center;
+}
+
+.patient-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #707070;
+  padding-bottom: 50px;
+}
+
+.patient-header-p {
+  color: #6B2D80;
+}
+
+.admin-login-link {
+  text-decoration: none;
+}
+
+.btn-make-appointment {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-meetdoc-sccuess {
+  background-color: #7CBD42;
+  border-radius: 29px;
+  color: white;
+  width: 28%;
+  height: 50%;
+}
+
+.table-header{
+  background-color: #E3E3E3;
+  color: #707070;
+  line-height: 2.2rem;
+
+
+}
+
+.table-row{
+  line-height: 4rem;
+}
+
+.pagination {
+  display: inline-block;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.pagination a {
+
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination-numbers{
+  color: #707070;
+}
+
+.pagination a.active {
+  background-color: #7CBD42;
+  color: white;
+}
+
+.next-prev{
+  color: #7CBD42;
+}
+
+.table thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid hsl(0, 0%, 87%);
+}
+
+.table {
+  box-shadow: 0 2px 5px 0px #00000029;
+}
+
+.btn-action-table{
+  border: 0;
+  color: #7CBD42;
+  background-color: white;
+}
+
+
+.table-footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #707070;
+  font-size: 1.3rem;
+}
+
+.custom-dataTable .btn-no-style{
+  background-color: inherit;
+  border: none;
+  margin-right: 3px;
+}
+
+::ng-deep .custom-dataTable  th.mat-header-cell{
+  background-color: #E3E3E3;
+}
+
+::ng-deep .custom-dataTable .mat-cell, .mat-footer-cell{
+  color:#707070;
+}
+
+::ng-deep .custom-dataTable th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+  border-width: 2px;
+  border-color: #E3E3E3;
+}
+
+::ng-deep th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+  width: 30%;
+}
+

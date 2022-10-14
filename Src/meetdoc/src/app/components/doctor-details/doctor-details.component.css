@@ -1,0 +1,227 @@
+.info{
+    margin-block-start: 2.5rem;
+    margin-inline-start: -0.7rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.profile_image{
+    padding: 0;
+}
+
+.profile_image img{
+    box-shadow: 0 5px 8px 0.2px #00000029;
+    width: 16rem;
+}
+
+.doc_description{
+    margin-left: 1rem;
+    width: 100%;
+}
+
+p{
+ margin: 0;
+}
+
+.doc_title{
+    color: #707070;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.specialization{
+    color: #707070;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.Ex{
+    color: #707070;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.Loc{
+    color: #707070;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.sessions{
+    color: #7CBD42;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 21px;
+}
+
+.actions{
+    font-family: "Segoe UI", Arial, sans-serif;
+    width: 100%;
+}
+
+.actions div{
+    float: right;
+}
+
+.edit{
+    border: none;
+    background-color: white;
+}
+
+.actions span{
+    font-size: 17px;
+    color: #707070;
+}
+
+.active span{
+    position: absolute;
+}
+
+::ng-deep .status .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: white;
+}
+
+::ng-deep .status .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: #2B9723;
+}
+
+::ng-deep .status .mat-slide-toggle-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: block;
+}
+
+::ng-deep .status .mat-slide-toggle-bar {
+    position: relative;
+    width: 32px;
+    height: 21px;
+    flex-shrink: 0;
+    border-radius: 13px;
+}
+
+::ng-deep .status .mat-slide-toggle-thumb-container {
+    position: absolute;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    top: 0.2rem;
+    left: 2px;
+    transform: translate3d(0, 0, 0);
+    transition: all 80ms linear;
+    transition-property: transform;
+}
+
+::ng-deep .status .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
+    transform: translate3d(12px, 0, 0);
+}
+
+.status{
+    font-size: 17px;
+    color: #2B9723;
+}
+
+.mat-icon{
+    color: #707070;
+}
+
+.card{
+    margin-inline: -12px;
+}
+
+::ng-deep .status .mat-slide-toggle-content {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+::ng-deep .card .mat-card {
+    border-radius: 0;
+}
+
+::ng-deep .card .mat-expansion-panel-body {
+    padding: 0;
+}
+
+::ng-deep .card .mat-expansion-panel-header {
+    padding: 0 15px;
+}
+ .desc{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-right: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.bts{
+    background-color: white;
+    padding: 0;
+    height: 30px;
+    border: 3px solid #7CBD42;
+    border-radius: 6px;
+}
+
+.add-minus{
+    color: #7CBD42;
+    font-weight: bolder;
+    margin-left: -2px;
+}
+ 
+.card-title{
+    color: #6B2D80;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 24px;
+    margin-top: 40px;
+    font-weight: 901;
+}
+
+.ex-card-clinic{
+    color: #707070;
+    font-size: 17px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.ex-card-details{
+    color: #707070;
+    font-size: 21px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.ex-card-years{
+    color: #DF0E0E;
+    font-size: 19px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.ce-card-details{
+    padding-top: 10px;
+    color: #707070;
+    font-size: 15px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    width: 50%;
+}
+
+.ce-card-years{
+    padding-bottom: 10px;
+    color: #DF0E0E;
+    font-size: 19px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.mat-icon {
+    vertical-align: middle;
+}
+
+.active-inactive{
+    color: #2B9723;
+    font-size: 17px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
